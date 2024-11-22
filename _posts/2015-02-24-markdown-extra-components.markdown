@@ -1,16 +1,16 @@
 ---
-title: "Implementing DevSecOps using GitLab SAST in CI Pipeline"
+title: "Markdown Extra Components"
 layout: post
-date: 2024-11-22 22:48
+date: 2016-02-24 22:48
 image: /assets/images/markdown.jpg
 headerImage: false
 tag:
-- DevSecOps
-- GitLab
-- SAST
+- markdown
+- components
+- extra
 category: blog
-author: amanda
-description: Implementing DevSecOps
+author: jamesfoster
+description: Markdown summary with different options
 ---
 
 ## Summary:
