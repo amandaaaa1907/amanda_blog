@@ -39,8 +39,10 @@ keamanan yang berkelanjutan di dalam tim pengembangan perangkat lunak.</p>
 - Python Alpine
 
 ## Topologi
+![This is an alt text.](assets/images/git clone.png)
 
 ## Alur Kerja
+![This is an alt text.](assets/images/git clone (1).png)
 
 <p>Nah sebelum ke langkah pengerjaan, kita bahas teori nya dulu yukk!</p>
 
@@ -74,30 +76,32 @@ fleksibel dan dapat menjalankan pekerjaan di lingkungan yang berbeda, seperti Do
 Kubernetes.</p>
 
 ### 5. SAST
-GitLab SAST (Static Application Security Testing) adalah fitur di GitLab yang otomatis
+<p>GitLab SAST (Static Application Security Testing) adalah fitur di GitLab yang otomatis
 memeriksa kode aplikasi untuk menemukan potensi kerentanan atau kelemahan keamanan
 sebelum aplikasi dijalankan. Penganalisis mengeluarkan laporan berformat JSON sebagai job
-artifacts.
+artifacts.</p>
 
 ### 6. Pipeline
-Pipeline di GitLab adalah kumpulan tahapan dan pekerjaan yang mengotomatisasikan
+<p>Pipeline di GitLab adalah kumpulan tahapan dan pekerjaan yang mengotomatisasikan
 proses pengembangan perangkat lunak. Pipeline GitLab mengeksekusi beberapa pekerjaan,
-tahap demi tahap, dengan bantuan kode otomatis.
+tahap demi tahap, dengan bantuan kode otomatis.</p>
 
 ### 7. Container
-Container adalah unit standar perangkat lunak yang mengemas kode dan semua
+<p>Container adalah unit standar perangkat lunak yang mengemas kode dan semua
 depedensi nya sehingga aplikasi berjalan dengan cepat, serta dapat diandalkan dari satu
 lingkungan komputasi ke lingkungan komputasi lainnya. Beberapa container dapat berjalan pada
 mesin yang sama dan berbagi kernel OS dengan container lain, masing-masing berjalan sebagai
-proses yang terisolasi dalam ruang pengguna.
+proses yang terisolasi dalam ruang pengguna.</p>
 
 ### 8. Docker
-Docker adalah layanan yang menyediakan kemampuan untuk mengemas dan menjalankan
+<p>Docker adalah layanan yang menyediakan kemampuan untuk mengemas dan menjalankan
 sebuah aplikasi dalam sebuah lingkungan terisolasi yang disebut dengan container. Dengan
 adanya isolasi dan keamanan yang memadai memungkinkan untuk menjalankan banyak container
-di waktu yang bersamaan.
+di waktu yang bersamaan.</p>
 
 ### 9. Python Flask
-Python Flask adalah kerangka kerja (framework) web ringan dan sederhana yang ditulis
+<p>Python Flask adalah kerangka kerja (framework) web ringan dan sederhana yang ditulis
 dalam bahasa pemrograman Python. Flask dianggap ringan karena tidak menuntut banyak hal dari
-sistem atau memerlukan banyak depedensi dibandingkan kerangka kerja Python lainnya.
+sistem atau memerlukan banyak depedensi dibandingkan kerangka kerja Python lainnya.</p>
+
+## Langkah Implementasi
