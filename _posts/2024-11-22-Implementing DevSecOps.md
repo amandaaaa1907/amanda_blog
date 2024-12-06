@@ -14,7 +14,7 @@ description: Implementing DevSecOps
 ---
 
 Haloo temen temen semuanya👋👋 Jadi di Blog ini merupakan dokumentasi tentang cara menerapkan konsep *DevSecOps* dengan memanfaatkan GitLab SAST (Static Application Security Testing) di CI Pipeline. Di sini, akan membahas langkah-langkah untuk mengintegrasikan keamanan aplikasi ke dalam pengembangan software.
-<p>Udah penasaran???? Yukk langsung aja, tapi sebelum itu bahas tentang teorinya sebentar yukk!!</p>
+<p>Udah penasaran???? Yukk langsung aja yukk!!</p>
 
 ## Deskripsi
 <p>Dalam Era digitalisasi yang terus berkembang, keamanan perangkat lunak menjadi aspek
@@ -31,3 +31,17 @@ tahap awal dalam siklus pengembangan, sehingga meningkatkan kualitas dan keamana
 perangkat lunak yang dihasilkan. Ini adalah langkah penting dalam menciptakan budaya
 keamanan yang berkelanjutan di dalam tim pengembangan perangkat lunak.</p>
 
+## Tools yang digunakan:
+- GitLab Community Edition v16.8.1
+- GitLab Runner v17.5.2
+- SAST
+- Docker v27.3.1
+- Python Alpine
+
+## Topologi
+
+## Alur Kerja
+
+<p>Nah sebelum ke langkah pengerjaan, kita bahas teori nya dulu yukk!</p>
+
+## Teori 
