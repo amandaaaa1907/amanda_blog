@@ -13,4 +13,7 @@ author: amanda
 description: Implementing DevSecOps
 ---
 
+<p>Haloo temen temen semuanya👋👋 Jadi di Blog ini merupakan dokumentasi tentang cara menerapkan konsep _DevSecOps_ dengan memanfaatkan GitLab SAST (Static Application Security Testing) di CI Pipeline. Di sini, akan membahas langkah-langkah untuk mengintegrasikan keamanan aplikasi ke dalam pengembangan software.</p>
+<p>Udah penasaran???? Cuss langsung aja, tapi sebelum itu bahas tentang teorinya sebentar yukk!!</p>
+
 ## Deskripsi
