@@ -45,3 +45,9 @@ keamanan yang berkelanjutan di dalam tim pengembangan perangkat lunak.</p>
 <p>Nah sebelum ke langkah pengerjaan, kita bahas teori nya dulu yukk!</p>
 
 ## Teori 
+1. DevOps
+DevOps merupakan singkatan dari dua kata yaitu “Development” dan “Operations”.
+DevOps merupakan gabungan dari budaya, alat dan praktik dalam pengembangan perangkat
+lunak yang menggabungkan proses pengembangan dengan proses operasi. DevOps mendorong
+kerja sama antara Tim Pengembangan dan Tim Operasi. Dengan DevOps pengembangan
+perangkat lunak menjadi lebih efektif.
