@@ -39,10 +39,10 @@ keamanan yang berkelanjutan di dalam tim pengembangan perangkat lunak.</p>
 - Python Alpine
 
 ## Topologi
-![git clone](assets/images/git clone.png)
+![alt text](<git clone.png>)
 
 ## Alur Kerja
-![git clone](assets/images/git clone (1).png)
+![alt text](<git clone (1).png>)
 
 <p>Nah sebelum ke langkah pengerjaan, kita bahas teori nya dulu yukk!</p>
 
@@ -105,3 +105,9 @@ dalam bahasa pemrograman Python. Flask dianggap ringan karena tidak menuntut ban
 sistem atau memerlukan banyak depedensi dibandingkan kerangka kerja Python lainnya.</p>
 
 ## Langkah Implementasi
+### 1. Install Docker
+```
+$ sudo apt-get update
+$ sudo apt-get install ca-certifiactes curl
+```
+### 2. Install GitLab Runner
