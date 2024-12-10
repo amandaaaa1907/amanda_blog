@@ -123,21 +123,21 @@ $ sudo apt-get update
 $ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 ### 2. Install GitLab Runner
-#### a. Install Gitlab Runner lalu tambahkan mode execute
+a. Install Gitlab Runner lalu tambahkan mode execute
 ```
 $ sudo curl -L --output /usr/local/bin/gitlab-runner https://gitlab-runner-downloads.s3.amazonaws.com/latest/binaries/gitlab-runner-linux-amd64
 $ sudo chmod +x /usr/local/bin/gitlab-runner
 ```
-#### b. Buat pengguna untuk Gitlab CI
+b. Buat pengguna untuk Gitlab CI
 ```
 $ sudo useradd --comment 'GitLab Runner' --create-home gitlab-runner --shell /bin/bash
 ```
-#### c. Install dan jalankan service Gitlab Runner
+c. Install dan jalankan service Gitlab Runner
 ```
 $ sudo gitlab-runner install --user=gitlab-runner --working-directory=/home/gitlab-runner
 $ sudo gitlab-runner start
 ```
-#### d. Tambahkan pengguna Gitlab Runner ke grup docker
+d. Tambahkan pengguna Gitlab Runner ke grup docker
 ```
 $ sudo usermod -aG docker gitlab-runner
 $ sudo -u gitlab-runner -H docker info
