@@ -105,7 +105,7 @@ dalam bahasa pemrograman Python. Flask dianggap ringan karena tidak menuntut ban
 sistem atau memerlukan banyak depedensi dibandingkan kerangka kerja Python lainnya.</p>
 
 ## Langkah Implementasi
-### 1. Install Docker
+### Install Docker
 ```
 # Add Docker's official GPG key:
 $ sudo apt-get update
@@ -122,31 +122,111 @@ $ echo \
 $ sudo apt-get update
 $ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
-### 2. Install GitLab Runner
-a. Install Gitlab Runner lalu tambahkan mode execute
+### Install GitLab Runner
+1). Install Gitlab Runner lalu tambahkan mode execute
 ```
 $ sudo curl -L --output /usr/local/bin/gitlab-runner https://gitlab-runner-downloads.s3.amazonaws.com/latest/binaries/gitlab-runner-linux-amd64
 $ sudo chmod +x /usr/local/bin/gitlab-runner
 ```
-b. Buat pengguna untuk Gitlab CI
+2). Buat pengguna untuk Gitlab CI
 ```
 $ sudo useradd --comment 'GitLab Runner' --create-home gitlab-runner --shell /bin/bash
 ```
-c. Install dan jalankan service Gitlab Runner
+3). Install dan jalankan service Gitlab Runner
 ```
 $ sudo gitlab-runner install --user=gitlab-runner --working-directory=/home/gitlab-runner
 $ sudo gitlab-runner start
 ```
-d. Tambahkan pengguna Gitlab Runner ke grup docker
+4). Tambahkan pengguna Gitlab Runner ke grup docker
 ```
 $ sudo usermod -aG docker gitlab-runner
 $ sudo -u gitlab-runner -H docker info
 ```
 ### 3. Membuat GitLab Akun dan Project
+<p>1. Buat akun Gitlab terlebih dahulu, login, sign in, atau bisa juga register</p>
+<p>2. Untuk membuat project baru pilih Projects > New Project lalu klik "Create blank project"</p>
+<p>3. Isi nama project, pilih Visibility Level Public, lalu klik "Create project"</p>
 
 ### 4. Clone Repository dari Github dan Konfigurasi GitLab
+1). Clone repository dari github [Link Repo](https://github.com/bta-adinusa/flask-todo-app).
+<p>2). Masuk ke dalam direktori dari repository tersebut</p>
+3). Buat konfigurasi global untuk menyediakan informasi tentang nama dan email
+
+```
+$ git config --global user.name "masukkan username"
+$ git config --global user.mail "masukkan email"
+$ git config --global init.defaultBranch main
+$ git config --global --list
+```
+
+4). Ubah URL repository menjadi URL ke repository Gitlab, setelah itu verifikasi hasil set url
+
+```
+$ git remote set-url origin https://gitlab.com/username/repo.git
+$ git remote -v
+```
 ### 5. Membuat Dockerfile
+> *Note: Karena mendeploy web flask-todo-app nya meggunakan docker jadi buat terlebih dahulu Dockerfile nya*
+<p>1. Buat Dockerfile nya</p>
+2. Isi Dockerfile sesuai dengan kebutuhan yang diperlukan, seperti contoh dibawah ini
+
+```
+FROM python:alpine
+RUN mkdir /app
+RUN apk update
+
+COPY . /app
+
+WORKDIR /app
+
+RUN python3 -m venv /app/venv
+RUN /app/venv/bin/pip
+RUN pip install -r requirements.txt
+
+ENTRYPOINT ["python"]
+CMD ["app.py"]
+```
+> Note: karena menggunakan alpine sehingga untuk update menggunakan command apk
+
 ### 6. Membuat file .gitlab-ci.yml dan SAST.gitlab-ci.yml
+<p>1. Buat file untuk gitlab ci</p>
+
+```
+$ sudo nano .gitlab-ci.yml
+```
+<p>2. Isi file gitlab-ci nya sesuai dengan kebutuhan, seperti contoh dibawah ini.</p>
+
+```
+include:
+  - template: Security/SAST.gitlab-ci.yml
+
+stages:
+  - sast
+  - deploy
+
+sast:
+  stage: sast
+  script:
+    - echo "Running SAST"
+
+deploy:
+  stage:
+  image: <image docker>
+  needs:
+    - job: sast
+      artifacts: true
+  script:
+    - docker build -t (nama untuk image) .
+    - docker run -d -p 5000:5000 --name (nama container) (nama image)
+    - docker images
+    - docker ps
+    - sleep 30
+    - docker ps
+  only:
+    - main
+```
+
+
 ### 7. Membuat GitLab Runner dan Push Kode
 ### 8. Mendownload Artifacts File JSON
 ### 9. Membuat Alert Untuk Pipeline dan Vulnerability
