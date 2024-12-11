@@ -188,7 +188,7 @@ RUN pip install -r requirements.txt
 ENTRYPOINT ["python"]
 CMD ["app.py"]
 ```
-> *Note: Karena menggunakan Alpine Linux, gunakan perintah apk update untuk memperbarui package list.*
+>*Note: Karena menggunakan Alpine Linux, gunakan perintah apk update untuk memperbarui package list.*
 
 ### 6. Membuat file .gitlab-ci.yml dan SAST.gitlab-ci.yml
 <p>1. Buat file untuk gitlab ci</p>
@@ -235,6 +235,33 @@ $ sudo nano SAST.gitlab-ci.yml
 <p>4. </p>
 
 ### 7. Membuat GitLab Runner dan Push Kode
+<p>1. Sebelum membuat runner, ambil token terlebih dahulu di bagian Settings > CI/CD > </p>
+<p>2. Klik Expand pada bagian Runners</p>
+<p>3. Klik titik 3 pada Project runners, lalu salin token yang ada</p>
+<p>4. Register Gitlab Runner dengan menggunakan executor docker</p>
+
+```
+$ sudo gitlab-runner register -n \
+  --url https://gitlab.com \
+  --registration-token (token) \
+  --executor docker \
+  --description "Docker Runner" \
+  --docker-image ("image docker") \
+  --docker-volume /var/run/docker.sock:/var/run/docker.sock
+```
+
+<p>5. Setelah Runner sudah terbuat, push kode ke gitlab</p>
+
+```
+$ git add .
+$ git commit -m "commant" && git push origin main
+```
+
 ### 8. Mendownload Artifacts File JSON
+1). Untuk mendownload hasil dari artifacts bisa di download di bagian Build > Artifacts. Download file yang format JSON.
+
+2). Tampilan JSON yang sudah di download akan berantakan dan jadi tidak terstruktur, teman-teman bisa gunakan web untuk memformat ulang tampilan JSON agar jadi lebih terstruktur. [Referensi website](https://jsonlint.com/)
+
 ### 9. Membuat Alert Untuk Pipeline dan Vulnerability
+
 
