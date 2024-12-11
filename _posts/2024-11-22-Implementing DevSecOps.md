@@ -187,7 +187,7 @@ ENTRYPOINT ["python"]
 CMD ["app.py"]
 ```
 <div class="note">
-    <strong>Note:</strong> Karena menggunakan Alpine Linux, gunakan perintah <code>apk update</code> untuk memperbarui package list.
+    <strong>Note:</strong> Karena menggunakan Alpine Linux, gunakan perintah apk update untuk memperbarui package list.
 </div>
 
 ### 6. Membuat file .gitlab-ci.yml dan SAST.gitlab-ci.yml
@@ -226,6 +226,11 @@ deploy:
     - docker ps
   only:
     - main
+```
+<p>3. Buat file untuk konfigurasi SAST</p>
+
+```
+$ sudo nano SAST.gitlab-ci.yml
 ```
 
 
