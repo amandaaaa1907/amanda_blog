@@ -42,7 +42,7 @@ keamanan yang berkelanjutan di dalam tim pengembangan perangkat lunak.</p>
 ![Topologi](git-clone.png)
 
 ## Alur Kerja
-![alt text](git-clone (1).png)
+![Alur kerja](git-clone-(1).png)
 
 <p>Nah, sebelum ke langkah pengerjaan, kita bahas teori nya dulu yukk!</p>
 
@@ -138,11 +138,12 @@ $ sudo gitlab-runner install --user=gitlab-runner --working-directory=/home/gitl
 $ sudo gitlab-runner start
 ```
 d. Tambahkan pengguna Gitlab Runner ke grup docker
-{% highlight raw %}
+```
 $ sudo usermod -aG docker gitlab-runner
 $ sudo -u gitlab-runner -H docker info
-{% endhighlight %}
+```
 ### 3. Membuat GitLab Akun dan Project
+
 ### 4. Clone Repository dari Github dan Konfigurasi GitLab
 ### 5. Membuat Dockerfile
 ### 6. Membuat file .gitlab-ci.yml dan SAST.gitlab-ci.yml
