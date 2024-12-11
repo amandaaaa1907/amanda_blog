@@ -142,4 +142,10 @@ d. Tambahkan pengguna Gitlab Runner ke grup docker
 $ sudo usermod -aG docker gitlab-runner
 $ sudo -u gitlab-runner -H docker info
 ```
-
+### 3. Membuat GitLab Akun dan Project
+### 4. Clone Repository dari Github dan Konfigurasi GitLab
+### 5. Membuat Dockerfile
+### 6. Membuat file .gitlab-ci.yml dan SAST.gitlab-ci.yml
+### 7. Membuat GitLab Runner dan Push Kode
+### 8. Mendownload Artifacts File JSON
+### 9. Membuat Alert Untuk Pipeline dan Vulnerability
