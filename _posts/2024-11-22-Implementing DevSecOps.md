@@ -39,10 +39,10 @@ keamanan yang berkelanjutan di dalam tim pengembangan perangkat lunak.</p>
 - Python Alpine
 
 ## Topologi
-![Topologi](/assets/images/git-clone.png)
+![Topologi](assets/images/git-clone.png)
 
 ## Alur Kerja
-![Alur kerja](git-clone-(1).png)
+![Alur kerja](assets/images/alur-kerja.png)
 
 <p>Nah, sebelum ke langkah pengerjaan, kita bahas teori nya dulu yukk!</p>
 
