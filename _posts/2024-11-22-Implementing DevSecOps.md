@@ -42,7 +42,7 @@ keamanan yang berkelanjutan di dalam tim pengembangan perangkat lunak.</p>
   <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/git-clone.png" alt="Topologi">
 
 ## Alur Kerja
-![Alur kerja](/assets/images/alur-kerja.png)
+  <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/alur-kerja.png" alt="Topologi">
 
 <p>Nah, sebelum ke langkah pengerjaan, kita bahas teori nya dulu yukk!</p>
 
