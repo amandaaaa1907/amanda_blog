@@ -186,7 +186,9 @@ RUN pip install -r requirements.txt
 ENTRYPOINT ["python"]
 CMD ["app.py"]
 ```
-> Note: karena menggunakan alpine sehingga untuk update menggunakan command apk
+<div class="note">
+    <strong>Note:</strong> Karena menggunakan Alpine Linux, gunakan perintah <code>apk update</code> untuk memperbarui package list.
+</div>
 
 ### 6. Membuat file .gitlab-ci.yml dan SAST.gitlab-ci.yml
 <p>1. Buat file untuk gitlab ci</p>
