@@ -166,9 +166,11 @@ $ git remote set-url origin https://gitlab.com/username/repo.git
 $ git remote -v
 ```
 ### 5. Membuat Dockerfile
-> *Note: Karena mendeploy web flask-todo-app nya meggunakan docker jadi buat terlebih dahulu Dockerfile nya*
+<div class="note">
+    <strong>Note:</strong> Karena mendeploy web flask-todo-app nya meggunakan docker jadi buat terlebih dahulu Dockerfile nya.
+</div>
 <p>1. Buat Dockerfile nya</p>
-2. Isi Dockerfile sesuai dengan kebutuhan yang diperlukan, seperti contoh dibawah ini
+<p>2. Isi Dockerfile sesuai dengan kebutuhan yang diperlukan, seperti contoh dibawah ini</p>
 
 ```
 FROM python:alpine
@@ -189,6 +191,8 @@ CMD ["app.py"]
 <div class="note">
     <strong>Note:</strong> Karena menggunakan Alpine Linux, gunakan perintah apk update untuk memperbarui package list.
 </div>
+
+> Note: Karena menggunakan Alpine Linux, gunakan perintah apk update untuk memperbarui package list.
 
 ### 6. Membuat file .gitlab-ci.yml dan SAST.gitlab-ci.yml
 <p>1. Buat file untuk gitlab ci</p>
@@ -232,7 +236,7 @@ deploy:
 ```
 $ sudo nano SAST.gitlab-ci.yml
 ```
-
+<p>4. </p>
 
 ### 7. Membuat GitLab Runner dan Push Kode
 ### 8. Mendownload Artifacts File JSON
