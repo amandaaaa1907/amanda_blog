@@ -144,8 +144,12 @@ $ sudo -u gitlab-runner -H docker info
 ```
 ### 3. Membuat GitLab Akun dan Project
 <p>1. Buat akun Gitlab terlebih dahulu, login, sign in, atau bisa juga register</p>
+<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ss9.png" alt="Gitlab">
+
 <p>2. Untuk membuat project baru pilih Projects > New Project lalu klik "Create blank project"</p>
+<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ss10.png" alt="Gitlab">
 <p>3. Isi nama project, pilih Visibility Level Public, lalu klik "Create project"</p>
+<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ss11.png" alt="Gitlab">
 
 ### 4. Clone Repository dari Github dan Konfigurasi GitLab
 1). Clone repository dari github [Link Repo](https://github.com/bta-adinusa/flask-todo-app).
@@ -240,8 +244,11 @@ $ sudo nano SAST.gitlab-ci.yml
 
 ### 7. Membuat GitLab Runner dan Push Kode
 <p>1. Sebelum membuat runner, ambil token terlebih dahulu di bagian Settings > CI/CD > </p>
+<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ss12.png" alt="Gitlab">
 <p>2. Klik Expand pada bagian Runners</p>
+<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ss13.png" alt="Gitlab">
 <p>3. Klik titik 3 pada Project runners, lalu salin token yang ada</p>
+<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ss14.png" alt="Gitlab">
 <p>4. Register Gitlab Runner dengan menggunakan executor docker</p>
 
 ```
@@ -292,3 +299,103 @@ $ git commit -m "commant" && git push origin main
 6). Di tahap ini masukkan URL webhook yang telah di salin sebelumnya, lalu pilih kotak yang ingin di centang sesuai dengan yang ingin dikirim notifikasi ke Discord. Setelah itu pilih **Save changes**
 
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ss3.png" alt="Discord">
+
+7). Contoh tampilan notifikasi Discord.
+<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ss4.png" alt="Discord">
+
+*Note: untuk alerting vulnerability menggunakan telegram*
+8). Tambahkam job untuk alert telegram di dalam file _.gitlab-ci.yml_.
+```
+notify-telegram:
+  stage: notify
+  image: python:3.9-alpine
+  before_script:
+    - pip install requests
+  script:
+    - echo "Sending SAST results to Telegram..."
+    - if [ ! -f gl-sast-report,json ]; then echo "Artifact not found!" && exit 1; fi
+    - python notify-telegram.py gl-sast-report.json
+```
+9). Edit file _notify-telegram.py_ untuk membuat script alert.
+```
+$ sudo nano notify-telegram.py
+
+# isi dari file notify-telegram.py
+import json
+import requests
+import sys
+import os
+
+# Telegram Bot Token dan Chat ID
+TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")  # TELEGRAM_TOKEN ada di variables gitlab
+CHAT_ID = os.getenv("CHAT_ID")  # CHAT_ID ada di variables gitlab
+
+def send_telegram_message(message):
+    url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
+    payload = {
+        "chat_id": CHAT_ID,
+        "text": message,
+        "parse_mode": "HTML"
+    }
+    response = requests.post(url, json=payload, timeout=10)
+    if response.status_code == 200:
+        print("Message sent successfully!")
+    else:
+        print(f"Failed to send message: {response.status_code}, {response.text}")
+
+def parse_sast_report(json_file):
+    with open(json_file, "r") as f:
+        data = json.load(f)
+
+    vulnerabilities = data.get("vulnerabilities", [])
+    if not vulnerabilities:
+        return "✅ <b>No vulnerabilities found</b> in the SAST report."
+
+    # Buat ringkasan hasil
+    message = "⚠️ <b>SAST Vulnerabilities Found:</b>\n\n"
+    for vuln in vulnerabilities[:5]:  # Kirim maksimal 5 issue
+        message += (
+            f"🔹 <b>ID:</b> {vuln.get('id', 'N/A')}\n"
+            f"    <b>Severity:</b> {vuln.get('severity', 'N/A')}\n"
+            f"    <b>Message:</b> {vuln.get('message', 'N/A')}\n"
+            f"    <b>File:</b> {vuln.get('location', {}).get('file', 'N/A')} (line {vuln.get('location', {}).get('start_line', 'N/A')})\n\n"
+        )
+    message += "\n🚨 Check details in the full SAST report."
+
+    return message
+
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("Usage: python notify_telegram.py <sast_json>")
+        sys.exit(1)
+
+    json_file = sys.argv[1]
+    try:
+        sast_message = parse_sast_report(json_file)
+        send_telegram_message(sast_message)
+    except Exception as e:
+        print(f"Error: {e}")
+        sys.exit(1)
+```
+10). Buat bot di telegram, bot ini untuk mengirimkan alert dari vulnerability. [Gunakan bot ini](https://web.telegram.org/k/#@BotFather)
+
+<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ss5.png" alt="Telegram">
+
+*Note: karena saya sudah pernah buat bot sebelumnya, jadi saya rename untuk nama botnya. Setelah bot dibuat salin tokennya.*
+
+11). Akses web untuk mendapatkan informasi bot.
+```
+https://api.telegram.org/bot(token)/getMe
+```
+12). Coba kirim pesan ke bot, setelah itu cek di browser apakah sudah mendapatkan chat id.
+
+<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ss6.png" alt="Telegram">
+
+```
+https://api.telegram.org/bot(token)/getUpdates
+```
+13). Setelah mendapatkan chat id, masukkan ke dalam variables di gitlab CI/CD. Ke Settings > CI/CD > Variables. Isi variables dengan CHAT_ID dan TELEGRAM_TOKEN.
+
+<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ss7.png" alt="Telegram">
+
+<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ss8.png" alt="Telegram">
