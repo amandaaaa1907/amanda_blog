@@ -428,6 +428,7 @@ https://api.telegram.org/bot(token)/getUpdates
 <a href="https://web.telegram.org/k/#@BotFather">Gunakan BotFather untuk membuar bot</a>
 
 <a href="https://github.com/bta-adinusa/flask-todo-app">Link Repository</a>
+
 ---
 
 <p>Nah jadi gitu teman-teman prosesnya, gimana? cukup rumit dan bikin pusing? Dengan ini kita dapat mendeteksi kerentanan sejak dini! Semoga panduan ini memberikan wawasan dan bermanfaat dalam mengimplementasikan GitLab SAST.</p>
