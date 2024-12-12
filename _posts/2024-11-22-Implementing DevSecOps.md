@@ -302,8 +302,6 @@ $ git commit -m "commant" && git push origin main
 
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ssganti12.png" alt="Discord">
 
-*Note: Karena saya sudah pernah buat jadi sudah active.*
-
 <p>5. Di tahap ini masukkan URL webhook yang telah di salin sebelumnya, lalu pilih kotak yang ingin di centang sesuai dengan yang ingin dikirim notifikasi ke Discord. Setelah itu pilih <b>Save changes</b>.</p>
 
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ssganti11.png" alt="Discord">
