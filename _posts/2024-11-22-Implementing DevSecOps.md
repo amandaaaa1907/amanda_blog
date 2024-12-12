@@ -44,6 +44,7 @@ keamanan yang berkelanjutan di dalam tim pengembangan perangkat lunak.</p>
 
 ## Alur Kerja
   <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/alur-kerja.png" alt="Topologi">
+  
 ---
 
 <p>Nah, sebelum ke langkah pengerjaan, kita bahas teori nya dulu yukk!</p>
