@@ -15,6 +15,7 @@ description: Implementing DevSecOps
 
 Haloo temen temen semuanya👋👋 Jadi di Blog ini merupakan dokumentasi tentang cara menerapkan konsep *DevSecOps* dengan memanfaatkan GitLab SAST (Static Application Security Testing) di CI Pipeline. Di sini, akan membahas langkah-langkah untuk mengintegrasikan keamanan aplikasi ke dalam pengembangan software.
 <p>Udah penasaran???? Yukk langsung aja yukk!!</p>
+---
 
 ## Deskripsi
 <p>Dalam Era digitalisasi yang terus berkembang, keamanan perangkat lunak menjadi aspek
@@ -43,6 +44,7 @@ keamanan yang berkelanjutan di dalam tim pengembangan perangkat lunak.</p>
 
 ## Alur Kerja
   <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/alur-kerja.png" alt="Topologi">
+---
 
 <p>Nah, sebelum ke langkah pengerjaan, kita bahas teori nya dulu yukk!</p>
 
@@ -103,6 +105,7 @@ di waktu yang bersamaan.</p>
 <p>Python Flask adalah kerangka kerja (framework) web ringan dan sederhana yang ditulis
 dalam bahasa pemrograman Python. Flask dianggap ringan karena tidak menuntut banyak hal dari
 sistem atau memerlukan banyak depedensi dibandingkan kerangka kerja Python lainnya.</p>
+---
 
 ## Langkah Implementasi
 ### Install Docker
