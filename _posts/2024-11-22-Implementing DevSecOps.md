@@ -298,26 +298,22 @@ $ git commit -m "commant" && git push origin main
 
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ssganti10.png" alt="Discord">
 
-<p>4. Beralih ke Gitlab, di bagian <b>Settings</b> pilih Integrations.</p>
+<p>4. Beralih ke Gitlab, di bagian <b>Settings</b> pilih Integrations. Pilih <b>Discord Notifications</b>, lalu pilih Configure</p>
 
-<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ss1.png" alt="Discord">
-
-<p>5. Pilih <b>Discord Notification</b>, lalu pilih Configure.</p>
-
-<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ss2.png" alt="Discord">
+<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ssganti12.png" alt="Discord">
 
 *Note: Karena saya sudah pernah buat jadi sudah active.*
 
-<p>6. Di tahap ini masukkan URL webhook yang telah di salin sebelumnya, lalu pilih kotak yang ingin di centang sesuai dengan yang ingin dikirim notifikasi ke Discord. Setelah itu pilih <b>Save changes</b>.</p>
+<p>5. Di tahap ini masukkan URL webhook yang telah di salin sebelumnya, lalu pilih kotak yang ingin di centang sesuai dengan yang ingin dikirim notifikasi ke Discord. Setelah itu pilih <b>Save changes</b>.</p>
 
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ssganti11.png" alt="Discord">
 
-<p>7. Contoh tampilan notifikasi Discord.</p>
+<p>6. Contoh tampilan notifikasi Discord.</p>
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ss4.png" alt="Discord">
 
 *Note: untuk alerting vulnerability menggunakan telegram*
 
-<p>8. Tambahkan job untuk alert telegram di dalam file <i>.gitlab-ci.yml</i>.</p>
+<p>7. Tambahkan job untuk alert telegram di dalam file <i>.gitlab-ci.yml</i>.</p>
 
 ```
 notify-telegram:
@@ -330,7 +326,7 @@ notify-telegram:
     - if [ ! -f gl-sast-report,json ]; then echo "Artifact not found!" && exit 1; fi
     - python notify-telegram.py gl-sast-report.json
 ```
-<p>9. Edit file <i>notify-telegram.py</i> untuk membuat script alert.</p>
+<p>8. Edit file <i>notify-telegram.py</i> untuk membuat script alert.</p>
 
 ```
 $ sudo nano notify-telegram.py
@@ -392,25 +388,25 @@ if __name__ == "__main__":
         print(f"Error: {e}")
         sys.exit(1)
 ```
-<p>10. Buat bot di telegram, bot ini untuk mengirimkan alert dari vulnerability.</p>
+<p>9. Buat bot di telegram, bot ini untuk mengirimkan alert dari vulnerability.</p>
 
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ss5.png" alt="Telegram">
 
 *Note: karena saya sudah pernah buat bot sebelumnya, jadi saya rename untuk nama botnya. Setelah bot dibuat salin tokennya.*
 
-<p>11. Akses web untuk mendapatkan informasi bot.</p>
+<p>10. Akses web untuk mendapatkan informasi bot.</p>
 
 ```
 https://api.telegram.org/bot(token)/getMe
 ```
-<p>12. Coba kirim pesan ke bot, setelah itu cek di browser apakah sudah mendapatkan chat id.</p>
+<p>11. Coba kirim pesan ke bot, setelah itu cek di browser apakah sudah mendapatkan chat id.</p>
 
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ss6.png" alt="Telegram">
 
 ```
 https://api.telegram.org/bot(token)/getUpdates
 ```
-<p>13. Setelah mendapatkan chat id, masukkan ke dalam variables di gitlab CI/CD. Ke Settings > CI/CD > Variables. Isi variables dengan CHAT_ID dan TELEGRAM_TOKEN.</p>
+<p>12. Setelah mendapatkan chat id, masukkan ke dalam variables di gitlab CI/CD. Ke Settings > CI/CD > Variables. Isi variables dengan CHAT_ID dan TELEGRAM_TOKEN.</p>
 
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ss7.png" alt="Telegram">
 
