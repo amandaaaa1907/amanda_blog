@@ -170,6 +170,10 @@ $ git remote -v
     <strong>Note:</strong> Karena mendeploy web flask-todo-app nya meggunakan docker jadi buat terlebih dahulu Dockerfile nya.
 </div>
 <p>1. Buat Dockerfile nya</p>
+
+```
+$ sudo nano Dockerfile
+```
 <p>2. Isi Dockerfile sesuai dengan kebutuhan yang diperlukan, seperti contoh dibawah ini</p>
 
 ```
@@ -232,7 +236,7 @@ deploy:
 ```
 $ sudo nano SAST.gitlab-ci.yml
 ```
-<p>4. </p>
+4.Karena menggunakan template untuk konfigurasi SAST nya, teman-teman bisa lihat [disini](https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/Jobs/SAST.gitlab-ci.yml).
 
 ### 7. Membuat GitLab Runner dan Push Kode
 <p>1. Sebelum membuat runner, ambil token terlebih dahulu di bagian Settings > CI/CD > </p>
@@ -263,5 +267,12 @@ $ git commit -m "commant" && git push origin main
 2). Tampilan JSON yang sudah di download akan berantakan dan jadi tidak terstruktur, teman-teman bisa gunakan web untuk memformat ulang tampilan JSON agar jadi lebih terstruktur. [Referensi website](https://jsonlint.com/)
 
 ### 9. Membuat Alert Untuk Pipeline dan Vulnerability
+*Note: Alert nya disini menggunakan Discord ya*
+
+1). Buka Discord channel tempat yang ingin dipakai untuk menerima notifikasi, lalu pilih **Edit CHannel**
+![alt text](image.png)
+
+<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/image.png" alt="Topologi">
+
 
 
