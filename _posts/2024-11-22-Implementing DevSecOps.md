@@ -44,7 +44,7 @@ keamanan yang berkelanjutan di dalam tim pengembangan perangkat lunak.</p>
 
 ## Alur Kerja
   <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/alur-kerja.png" alt="Topologi">
-  
+
 ---
 
 <p>Nah, sebelum ke langkah pengerjaan, kita bahas teori nya dulu yukk!</p>
@@ -247,10 +247,10 @@ deploy:
 ```
 $ sudo nano SAST.gitlab-ci.yml
 ```
-<p>4. Karena menggunakan template untuk konfigurasi SAST nya, teman-teman bisa lihat <a href="https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/Jobs/SAST.gitlab-ci.yml">disini</a>.</p>
+<p>4. Karena menggunakan template untuk konfigurasi SAST nya, teman-teman bisa gunakan template yang sudah di sediakan Gitlab.</p>
 
 ### Membuat GitLab Runner dan Push Kode
-<p>1. Sebelum membuat runner, ambil token terlebih dahulu di bagian Settings > CI/CD > </p>
+<p>1. Sebelum membuat runner, ambil token terlebih dahulu di bagian Settings > CI/CD.</p>
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ss12.png" alt="Gitlab">
 <p>2. Klik Expand pada bagian Runners</p>
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ss13.png" alt="Gitlab">
@@ -280,12 +280,12 @@ $ git commit -m "commant" && git push origin main
 
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ss15.png" alt="Gitlab">
 
-<p>2. Tampilan JSON yang sudah di download akan berantakan dan jadi tidak terstruktur, teman-teman bisa gunakan web untuk memformat ulang tampilan JSON agar jadi lebih terstruktur. <a href="https://jsonlint.com/">Referensi Website</a>.</p>
+<p>2. Tampilan JSON yang sudah di download akan berantakan dan jadi tidak terstruktur, teman-teman bisa gunakan web untuk memformat ulang tampilan JSON agar jadi lebih terstruktur.</p>
 
-### Membuat Alert Untuk Pipeline dan Vulnerability
+### Membuat Alert Discord Untuk Pipeline dan Vulnerability
 *Note: Alert nya disini menggunakan Discord ya*
 
-<p>1. Buka Discord channel tempat yang ingin dipakai untuk menerima notifikasi, lalu pilih <b>Edit CHannel.</b></p>
+<p>1. Buka Discord channel tempat yang ingin dipakai untuk menerima notifikasi, lalu pilih <b>Edit Channel.</b></p>
 
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/Screenshot 2024-11-11-110932.png" alt="Discord">
 
@@ -301,9 +301,11 @@ $ git commit -m "commant" && git push origin main
 
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ss1.png" alt="Discord">
 
-<p>5. Pilih <b>Discord Nofifications</b>, lalu pilih Configure.</p>
+<p>5. Pilih <b>Discord Notification</b>, lalu pilih Configure.</p>
 
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ss2.png" alt="Discord">
+
+*Note: Karena saya sudah pernah buat jadi sudah active.*
 
 <p>6. Di tahap ini masukkan URL webhook yang telah di salin sebelumnya, lalu pilih kotak yang ingin di centang sesuai dengan yang ingin dikirim notifikasi ke Discord. Setelah itu pilih <b>Save changes</b>.</p>
 
@@ -389,7 +391,7 @@ if __name__ == "__main__":
         print(f"Error: {e}")
         sys.exit(1)
 ```
-<p>10. Buat bot di telegram, bot ini untuk mengirimkan alert dari vulnerability. <a href="https://web.telegram.org/k/#@BotFather">Gunakan bot ini</a></p>
+<p>10. Buat bot di telegram, bot ini untuk mengirimkan alert dari vulnerability.</p>
 
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ss5.png" alt="Telegram">
 
@@ -414,6 +416,19 @@ https://api.telegram.org/bot(token)/getUpdates
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ss8.png" alt="Telegram">
 
 --- 
+## Referensi
+<a href="https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/Jobs/SAST.gitlab-ci.yml">Template SAST</a>
+
+<a href="https://youtu.be/owwIMUamdDc?si=0qhySUZ5FBd9Lrid">GitLab: DevSecOps: Part 5/12: Protect your Apps with Static Application Security Testing (SAST)</a>
+
+<a href="https://youtu.be/jfP11CHsz3E?si=yL9Vbc1Ycf3xkHZY">Build full CICD Pipelines for Docker Flask App in GitLab</a>
+
+<a href="https://jsonlint.com/">Referensi Website untuk memformat ulang file JSON</a>
+
+<a href="https://web.telegram.org/k/#@BotFather">Gunakan BotFather untuk membuar bot</a>
+
+<a href="https://github.com/bta-adinusa/flask-todo-app">Link Repository</a>
+---
 
 <p>Nah jadi gitu teman-teman prosesnya, gimana? cukup rumit dan bikin pusing? Dengan ini kita dapat mendeteksi kerentanan sejak dini! Semoga panduan ini memberikan wawasan dan bermanfaat dalam mengimplementasikan GitLab SAST.</p>
 <p>Terima kasih telah membaca, dan sampai jumpa di artikel lainnya!👋</p>
