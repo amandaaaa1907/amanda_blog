@@ -170,9 +170,7 @@ $ git remote set-url origin https://gitlab.com/username/repo.git
 $ git remote -v
 ```
 ### 5. Membuat Dockerfile
-<div class="note">
-    <strong>Note:</strong> Karena mendeploy web flask-todo-app nya meggunakan docker jadi buat terlebih dahulu Dockerfile nya.
-</div>
+*Note: Karena mendeploy web flask-todo-app nya meggunakan docker jadi buat terlebih dahulu Dockerfile nya.*
 <p>1. Buat Dockerfile nya</p>
 
 ```
@@ -196,7 +194,7 @@ RUN pip install -r requirements.txt
 ENTRYPOINT ["python"]
 CMD ["app.py"]
 ```
->*Note: Karena menggunakan Alpine Linux, gunakan perintah apk update untuk memperbarui package list.*
+*Note: Karena menggunakan Alpine Linux, gunakan perintah apk update untuk memperbarui package list.*
 
 ### 6. Membuat file .gitlab-ci.yml dan SAST.gitlab-ci.yml
 <p>1. Buat file untuk gitlab ci</p>
@@ -304,6 +302,7 @@ $ git commit -m "commant" && git push origin main
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ss4.png" alt="Discord">
 
 *Note: untuk alerting vulnerability menggunakan telegram*
+
 8). Tambahkam job untuk alert telegram di dalam file _.gitlab-ci.yml_.
 ```
 notify-telegram:
