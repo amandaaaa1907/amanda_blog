@@ -298,7 +298,7 @@ $ git commit -m "commant" && git push origin main
 
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ssganti10.png" alt="Discord">
 
-<p>4. Beralih ke Gitlab, di bagian <b>Settings</b> pilih Integrations. Pilih <b>Discord Notifications</b>, lalu pilih Configure</p>
+<p>4. Beralih ke Gitlab, di bagian <b>Settings</b> pilih Integrations. Pilih <b>Discord Notifications</b>, lalu pilih Configure.</p>
 
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ssganti12.png" alt="Discord">
 
