@@ -273,3 +273,9 @@ $ git commit -m "commant" && git push origin main
 
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/Screenshot 2024-11-11-110932.png" alt="Discord">
 
+2). Pilih bagian **Integrations**
+<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/Screenshot 2024-11-11.png" alt="Discord">
+
+3). Jika belum ada webhook, pilih bagian **Create Webhook**, lalu pilih **View Webhook**, setelah itu klik **New Webhook**. Kalau webhook sudah ada salin URL dari kolom **Copy Webhook URL**
+
+<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/Screenshot 2024-11-112.png" alt="Discord">
