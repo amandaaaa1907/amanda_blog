@@ -270,9 +270,6 @@ $ git commit -m "commant" && git push origin main
 *Note: Alert nya disini menggunakan Discord ya*
 
 1). Buka Discord channel tempat yang ingin dipakai untuk menerima notifikasi, lalu pilih **Edit CHannel**
-![alt text](image.png)
 
-<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/image.png" alt="Topologi">
-
-
+<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/Screenshot 2024-11-11-110932.png" alt="Discord">
 
