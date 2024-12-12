@@ -317,7 +317,7 @@ $ git commit -m "commant" && git push origin main
 
 *Note: untuk alerting vulnerability menggunakan telegram*
 
-<p>8. Tambahkam job untuk alert telegram di dalam file <i>.gitlab-ci.yml</i>.</p>
+<p>8. Tambahkan job untuk alert telegram di dalam file <i>.gitlab-ci.yml</i>.</p>
 
 ```
 notify-telegram:
