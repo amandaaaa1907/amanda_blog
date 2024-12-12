@@ -155,9 +155,9 @@ $ sudo -u gitlab-runner -H docker info
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ss9.png" alt="Gitlab">
 
 <p>2. Untuk membuat project baru pilih Projects > New Project lalu klik "Create blank project".</p>
-<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ss10.png" alt="Gitlab">
+<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ssganti1.png" alt="Gitlab">
 <p>3. Isi nama project, pilih Visibility Level Public, lalu klik "Create project".</p>
-<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ss11.png" alt="Gitlab">
+<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ssganti2.png" alt="Gitlab">
 
 ### Clone Repository dari Github dan Konfigurasi GitLab
 <p>1. Clone repository dari github <a href="https://github.com/bta-adinusa/flask-todo-app">Link Repo</a>.</p>
@@ -251,11 +251,11 @@ $ sudo nano SAST.gitlab-ci.yml
 
 ### Membuat GitLab Runner dan Push Kode
 <p>1. Sebelum membuat runner, ambil token terlebih dahulu di bagian Settings > CI/CD.</p>
-<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ss12.png" alt="Gitlab">
+<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ssganti3.png" alt="Gitlab">
 <p>2. Klik Expand pada bagian Runners</p>
-<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ss13.png" alt="Gitlab">
+<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ssganti4.png" alt="Gitlab">
 <p>3. Klik titik 3 pada Project runners, lalu salin token yang ada</p>
-<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ss14.png" alt="Gitlab">
+<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ssganti5.png" alt="Gitlab">
 <p>4. Register Gitlab Runner dengan menggunakan executor docker</p>
 
 ```
@@ -278,7 +278,7 @@ $ git commit -m "commant" && git push origin main
 ### Mendownload Artifacts File JSON
 <p>1. Untuk mendownload hasil dari artifacts bisa di download di bagian Build > Artifacts. Download file yang format JSON.</p>
 
-<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ss15.png" alt="Gitlab">
+<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ssganti6.png" alt="Gitlab">
 
 <p>2. Tampilan JSON yang sudah di download akan berantakan dan jadi tidak terstruktur, teman-teman bisa gunakan web untuk memformat ulang tampilan JSON agar jadi lebih terstruktur.</p>
 
@@ -287,15 +287,16 @@ $ git commit -m "commant" && git push origin main
 
 <p>1. Buka Discord channel tempat yang ingin dipakai untuk menerima notifikasi, lalu pilih <b>Edit Channel.</b></p>
 
-<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/Screenshot 2024-11-11-110932.png" alt="Discord">
+<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ssganti7.png" alt="Discord">
 
 <p>2. Pilih bagian <b>Integrations.</b></p>
-<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/Screenshot 2024-11-11.png" alt="Discord">
+<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ssganti8.png" alt="Discord">
 
 <p>3. Jika belum ada webhook, pilih bagian <b>Create Webhook</b>, lalu pilih <b>View Webhook</b>, setelah itu klik <b>New Webhook</b>. Kalau webhook sudah ada salin URL dari kolom <b>Copy Webhook URL</b>.</p>
 
-<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/Screenshot 2024-11-112.png" alt="Discord">
-<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/Screenshot 2024-11-113.png" alt="Discord">
+<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ssganti9.png" alt="Discord">
+
+<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ssganti10.png" alt="Discord">
 
 <p>4. Beralih ke Gitlab, di bagian <b>Settings</b> pilih Integrations.</p>
 
@@ -309,7 +310,7 @@ $ git commit -m "commant" && git push origin main
 
 <p>6. Di tahap ini masukkan URL webhook yang telah di salin sebelumnya, lalu pilih kotak yang ingin di centang sesuai dengan yang ingin dikirim notifikasi ke Discord. Setelah itu pilih <b>Save changes</b>.</p>
 
-<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ss3.png" alt="Discord">
+<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ssganti11.png" alt="Discord">
 
 <p>7. Contoh tampilan notifikasi Discord.</p>
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ss4.png" alt="Discord">
@@ -416,6 +417,13 @@ https://api.telegram.org/bot(token)/getUpdates
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ss8.png" alt="Telegram">
 
 --- 
+<p>Nah jadi gitu teman-teman prosesnya, gimana? cukup rumit dan bikin pusing? Dengan ini kita dapat mendeteksi kerentanan sejak dini! Semoga panduan ini memberikan wawasan dan bermanfaat dalam mengimplementasikan GitLab SAST.</p>
+<p>Terima kasih telah membaca, dan sampai jumpa di artikel lainnya!👋</p>
+
+<div class="breaker"></div>
+
+---
+
 ## Referensi
 <a href="https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/Jobs/SAST.gitlab-ci.yml">Template SAST</a>
 
@@ -428,10 +436,3 @@ https://api.telegram.org/bot(token)/getUpdates
 <a href="https://web.telegram.org/k/#@BotFather">Gunakan BotFather untuk membuar bot</a>
 
 <a href="https://github.com/bta-adinusa/flask-todo-app">Link Repository</a>
-
----
-
-<p>Nah jadi gitu teman-teman prosesnya, gimana? cukup rumit dan bikin pusing? Dengan ini kita dapat mendeteksi kerentanan sejak dini! Semoga panduan ini memberikan wawasan dan bermanfaat dalam mengimplementasikan GitLab SAST.</p>
-<p>Terima kasih telah membaca, dan sampai jumpa di artikel lainnya!👋</p>
-
-<div class="breaker"></div>
