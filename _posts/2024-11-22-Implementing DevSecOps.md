@@ -279,3 +279,16 @@ $ git commit -m "commant" && git push origin main
 3). Jika belum ada webhook, pilih bagian **Create Webhook**, lalu pilih **View Webhook**, setelah itu klik **New Webhook**. Kalau webhook sudah ada salin URL dari kolom **Copy Webhook URL**
 
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/Screenshot 2024-11-112.png" alt="Discord">
+<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/Screenshot 2024-11-113.png" alt="Discord">
+
+4). Beralih ke Gitlab, di bagian **Settings** pilih Integrations
+
+<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ss1.png" alt="Discord">
+
+5). Pilih **Discord Nofifications**, lalu pilih Configure
+
+<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ss2.png" alt="Discord">
+
+6). Di tahap ini masukkan URL webhook yang telah di salin sebelumnya, lalu pilih kotak yang ingin di centang sesuai dengan yang ingin dikirim notifikasi ke Discord. Setelah itu pilih **Save changes**
+
+<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ss3.png" alt="Discord">
