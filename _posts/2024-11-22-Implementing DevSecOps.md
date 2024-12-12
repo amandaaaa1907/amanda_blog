@@ -269,6 +269,8 @@ $ git commit -m "commant" && git push origin main
 ### 8. Mendownload Artifacts File JSON
 1). Untuk mendownload hasil dari artifacts bisa di download di bagian Build > Artifacts. Download file yang format JSON.
 
+<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ss15.png" alt="Gitlab">
+
 2). Tampilan JSON yang sudah di download akan berantakan dan jadi tidak terstruktur, teman-teman bisa gunakan web untuk memformat ulang tampilan JSON agar jadi lebih terstruktur. [Referensi website](https://jsonlint.com/)
 
 ### 9. Membuat Alert Untuk Pipeline dan Vulnerability
