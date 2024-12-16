@@ -51,61 +51,31 @@ keamanan yang berkelanjutan di dalam tim pengembangan perangkat lunak.</p>
 
 ## Teori 
 ### 1. DevOps
-<p>DevOps merupakan singkatan dari dua kata yaitu “Development” dan “Operations”.
-DevOps merupakan gabungan dari budaya, alat dan praktik dalam pengembangan perangkat
-lunak yang menggabungkan proses pengembangan dengan proses operasi. DevOps mendorong
-kerja sama antara Tim Pengembangan dan Tim Operasi. Dengan DevOps pengembangan
-perangkat lunak menjadi lebih efektif.</p>
+<p>DevOps adalah pendekatan yang menggabungkan tim <i>Development</i> (pengembangan) dan <i>Operations</i> (operasional) supaya bisa kerja sama lebih efektif. Dengan DevOps, proses build, tes, dan deploy aplikasi jadi lebih cepat, efisien, dan minim kesalahan. </p>
 
 ### 2. DevSecOps
-<p>DevSecOps adalah praktik mengintegrasikan pengujian keamanan di setiap tahap proses
-pengembangan perangkat lunak. DevSecOps mencakup berbagai alat dan proses yang
-mendorong kolaborasi antara pengembangan, spesialis keamanan, dan tim operasi untuk
-membangun perangkat lunak yang efisien dan aman.</p>
+<p>DevSecOps adalah pengembangan dari DevOps dengan tambahan fokus keamanan. Tes keamanan dilakukan di setiap tahap, bukan hanya di akhir. Tujuannya biar aplikasi nggak hanya selesai cepat, tetapi juga aman dari risiko celah keamanan <i>(vulnerabilities).</i></p>
 
 ### 3. GitLab
-<p>GitLab adalah repositori Git berbasis web yang menyediakan repositori terbuka dan pribadi
-secara gratis, kapabilitas pelacakan masalah, dan wiki. Ini adalah platform DevOps lengkap yang
-memungkinkan para profesional untuk melakukan semua tugas dalam sebuah proyek mulai dari
-perencanaan proyek dan manajemen kode sumber hingga pemantauan dan keamanan. Selain itu,
-platform ini memungkinkan tim untuk berkolaborasi dan membangun perangkat lunak yang lebih
-baik.</p>
+<p>GitLab adalah platform lengkap untuk manajemen proyek dan pengembangan aplikasi. Mulai dari <i>plan</i>, menyimpan kode, ngejalanin tes, sampai <i>deploy</i>, semuanya bisa dilakukan di GitLab. Tim juga bisa kerja bareng lebih mudah karena semuanya ada dalam satu tempat.</p>
 
 ### 4. GitLab Runner
-<p>Gitlab Runner adalah eksekutor yang digunakan untuk menjalankan pekerjaan CI/CD dan
-mengirimkan hasilnya kembali ke GitLab. Runner adalah pekerja keras dari pipeline CI/CD GitLab,
-yang melakukan tugas-tugas seperti membangun, menguji, dan men-deploy kode. Mereka
-fleksibel dan dapat menjalankan pekerjaan di lingkungan yang berbeda, seperti Docker, shell, dan
-Kubernetes.</p>
+<p>Gitlab Runner itu alat buat ngejalanin tugas di pipeline CI/CD GitLab, seperti <i>build</i>, tes, atau <i>deploy</i> kode. RUnner fleksibel, bisa jalan di berbagi lingkungan, seperti Docker, shell, atau Kubernetes.</p>
 
 ### 5. SAST
-<p>GitLab SAST (Static Application Security Testing) adalah fitur di GitLab yang otomatis
-memeriksa kode aplikasi untuk menemukan potensi kerentanan atau kelemahan keamanan
-sebelum aplikasi dijalankan. Penganalisis mengeluarkan laporan berformat JSON sebagai job
-artifacts.</p>
+<p>GitLab SAST <i>(Static Application Security Testing)</i> adalah fitur di GitLab yang otomatis ngecek kode aplikasi buat nyari celah keamanan. Analisisnya dilakukan sebelum aplikasi dijalankan. Hasilnya disimpan dalam laporan berformat JSON.</p>
 
 ### 6. Pipeline
-<p>Pipeline di GitLab adalah kumpulan tahapan dan pekerjaan yang mengotomatisasikan
-proses pengembangan perangkat lunak. Pipeline GitLab mengeksekusi beberapa pekerjaan,
-tahap demi tahap, dengan bantuan kode otomatis.</p>
+<p>Pipeline di GitLab adalah rangkaian tugas otomatis yang jalan secara berurutan, dari <i>build</i>, tes, sampai <i>deploy</i>. Pipeline bikin proses pengembangan jadi lebih cepat dan konsisten.</p>
 
 ### 7. Container
-<p>Container adalah unit standar perangkat lunak yang mengemas kode dan semua
-depedensi nya sehingga aplikasi berjalan dengan cepat, serta dapat diandalkan dari satu
-lingkungan komputasi ke lingkungan komputasi lainnya. Beberapa container dapat berjalan pada
-mesin yang sama dan berbagi kernel OS dengan container lain, masing-masing berjalan sebagai
-proses yang terisolasi dalam ruang pengguna.</p>
+<p>Container adalah unit standar yang membungkus aplikasi dan semua dependensinya. Dengan container, aplikasi bisa jalan di berbagai lingkungan (laptop, server, cloud) tanpa masalah.</p>
 
 ### 8. Docker
-<p>Docker adalah layanan yang menyediakan kemampuan untuk mengemas dan menjalankan
-sebuah aplikasi dalam sebuah lingkungan terisolasi yang disebut dengan container. Dengan
-adanya isolasi dan keamanan yang memadai memungkinkan untuk menjalankan banyak container
-di waktu yang bersamaan.</p>
+<p>Docker adalah alat buat bikin dan ngejalanin container. Dengan Docker, kita bisa nge-<i>package</i> aplikasi dan depedensinya jadi satu, sehingga mudah dijalankan di mana saja dengan cara yang sama.</p>
 
 ### 9. Python Flask
-<p>Python Flask adalah kerangka kerja (framework) web ringan dan sederhana yang ditulis
-dalam bahasa pemrograman Python. Flask dianggap ringan karena tidak menuntut banyak hal dari
-sistem atau memerlukan banyak depedensi dibandingkan kerangka kerja Python lainnya.</p>
+<p>Flask adalah framework web berbasis Python yang simpel dan ringan. Framework ini cocok buat bikin aplikasi web sederhana atau <i>prototype</i> karena nggak terlalu banyak aturan dan fleksibel kalau mau dikembangkan lebih lanjut.</p>
 ---
 
 ## Langkah Implementasi
@@ -151,12 +121,12 @@ $ sudo usermod -aG docker gitlab-runner
 $ sudo -u gitlab-runner -H docker info
 ```
 ### Membuat GitLab Akun dan Project
-<p>1. Buat akun Gitlab terlebih dahulu, login, sign in, atau bisa juga register.</p>
+<p>1. Buat akun Gitlab terlebih dahulu, login atau bisa juga register.</p>
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ss9.png" alt="Gitlab">
 
-<p>2. Untuk membuat project baru pilih Projects > New Project lalu klik "Create blank project".</p>
+<p>2. Untuk membuat project baru pilih <b>Projects</b> > <b>New Project</b> lalu klik <b>"Create blank project".</b></p>
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ssganti1.png" alt="Gitlab">
-<p>3. Isi nama project, pilih Visibility Level Public, lalu klik "Create project".</p>
+<p>3. Isi nama project, pilih Visibility Level <b>Public</b>, lalu klik <b>"Create project".</b></p>
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ssganti2.png" alt="Gitlab">
 
 ### Clone Repository dari Github dan Konfigurasi GitLab
@@ -250,9 +220,9 @@ $ sudo nano SAST.gitlab-ci.yml
 <p>4. Karena menggunakan template untuk konfigurasi SAST nya, teman-teman bisa gunakan template yang sudah di sediakan Gitlab.</p>
 
 ### Membuat GitLab Runner dan Push Kode
-<p>1. Sebelum membuat runner, ambil token terlebih dahulu di bagian Settings > CI/CD.</p>
+<p>1. Sebelum membuat runner, ambil token terlebih dahulu di bagian <b>Settings</b> > <b>CI/CD.</b></p>
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ssganti3.png" alt="Gitlab">
-<p>2. Klik Expand pada bagian Runners</p>
+<p>2. Klik <b>Expand</b> pada bagian Runners</p>
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ssganti4.png" alt="Gitlab">
 <p>3. Klik titik 3 pada Project runners, lalu salin token yang ada</p>
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ssganti5.png" alt="Gitlab">
@@ -276,11 +246,13 @@ $ git commit -m "commant" && git push origin main
 ```
 
 ### Mendownload Artifacts File JSON
-<p>1. Untuk mendownload hasil dari artifacts bisa di download di bagian Build > Artifacts. Download file yang format JSON.</p>
+<p>1. Untuk mendownload hasil dari artifacts bisa di download di bagian <b>Build</b> > <b>Artifacts.</b> Download file yang format JSON.</p>
 
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ssganti6.png" alt="Gitlab">
 
 <p>2. Tampilan JSON yang sudah di download akan berantakan dan jadi tidak terstruktur, teman-teman bisa gunakan web untuk memformat ulang tampilan JSON agar jadi lebih terstruktur.</p>
+
+<img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ss17.png" alt="Gitlab">
 
 ### Membuat Alert Discord Untuk Pipeline dan Vulnerability
 *Note: Alert nya disini menggunakan Discord ya*
