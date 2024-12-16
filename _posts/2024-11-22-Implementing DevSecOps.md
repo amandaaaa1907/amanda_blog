@@ -153,7 +153,7 @@ $ git remote -v
 <p>1. Buat Dockerfile nya.</p>
 
 ```
-$ sudo nano Dockerfile
+$ nano Dockerfile
 ```
 <p>2. Isi Dockerfile sesuai dengan kebutuhan yang diperlukan, seperti contoh dibawah ini.</p>
 
@@ -179,7 +179,7 @@ CMD ["app.py"]
 <p>1. Buat file untuk gitlab ci.</p>
 
 ```
-$ sudo nano .gitlab-ci.yml
+$ nano .gitlab-ci.yml
 ```
 <p>2. Isi file gitlab-ci nya sesuai dengan kebutuhan, seperti contoh dibawah ini.</p>
 
@@ -215,7 +215,7 @@ deploy:
 <p>3. Buat file untuk konfigurasi SAST.</p>
 
 ```
-$ sudo nano SAST.gitlab-ci.yml
+$ nano SAST.gitlab-ci.yml
 ```
 <p>4. Karena menggunakan template untuk konfigurasi SAST nya, teman-teman bisa gunakan template yang sudah di sediakan Gitlab.</p>
 
@@ -299,7 +299,7 @@ notify-telegram:
 <p>8. Edit file <i>notify-telegram.py</i> untuk membuat script alert.</p>
 
 ```
-$ sudo nano notify-telegram.py
+$ nano notify-telegram.py
 
 # isi dari file notify-telegram.py
 import json
