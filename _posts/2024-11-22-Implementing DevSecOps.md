@@ -60,7 +60,7 @@ keamanan yang berkelanjutan di dalam tim pengembangan perangkat lunak.</p>
 <p>GitLab adalah platform lengkap untuk manajemen proyek dan pengembangan aplikasi. Mulai dari <i>plan</i>, menyimpan kode, ngejalanin tes, sampai <i>deploy</i>, semuanya bisa dilakukan di GitLab. Tim juga bisa kerja bareng lebih mudah karena semuanya ada dalam satu tempat.</p>
 
 ### 4. GitLab Runner
-<p>Gitlab Runner itu alat buat ngejalanin tugas di pipeline CI/CD GitLab, seperti <i>build</i>, tes, atau <i>deploy</i> kode. RUnner fleksibel, bisa jalan di berbagi lingkungan, seperti Docker, shell, atau Kubernetes.</p>
+<p>Gitlab Runner itu alat buat ngejalanin tugas di pipeline CI/CD GitLab, seperti <i>build</i>, tes, atau <i>deploy</i> kode. Runner fleksibel, bisa jalan di berbagi lingkungan, seperti Docker, shell, atau Kubernetes.</p>
 
 ### 5. SAST
 <p>GitLab SAST <i>(Static Application Security Testing)</i> adalah fitur di GitLab yang otomatis ngecek kode aplikasi buat nyari celah keamanan. Analisisnya dilakukan sebelum aplikasi dijalankan. Hasilnya disimpan dalam laporan berformat JSON.</p>
@@ -124,9 +124,9 @@ $ sudo -u gitlab-runner -H docker info
 <p>1. Buat akun Gitlab terlebih dahulu, login atau bisa juga register.</p>
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ss9.png" alt="Gitlab">
 
-<p>2. Untuk membuat project baru pilih <b>Projects</b> > <b>New Project</b> lalu klik <b>"Create blank project".</b></p>
+<p>2. Untuk membuat project baru pilih <strong>Projects</strong> > <strong>New Project</strong> lalu klik <strong>"Create blank project".</strong></p>
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ssganti1.png" alt="Gitlab">
-<p>3. Isi nama project, pilih Visibility Level <b>Public</b>, lalu klik <b>"Create project".</b></p>
+<p>3. Isi nama project, pilih Visibility Level <strong>Public</strong>, lalu klik <strong>"Create project".</strong></p>
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ssganti2.png" alt="Gitlab">
 
 ### Clone Repository dari Github dan Konfigurasi GitLab
@@ -220,9 +220,9 @@ $ sudo nano SAST.gitlab-ci.yml
 <p>4. Karena menggunakan template untuk konfigurasi SAST nya, teman-teman bisa gunakan template yang sudah di sediakan Gitlab.</p>
 
 ### Membuat GitLab Runner dan Push Kode
-<p>1. Sebelum membuat runner, ambil token terlebih dahulu di bagian <b>Settings</b> > <b>CI/CD.</b></p>
+<p>1. Sebelum membuat runner, ambil token terlebih dahulu di bagian <strong>Settings</strong> > <strong>CI/CD.</strong></p>
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ssganti3.png" alt="Gitlab">
-<p>2. Klik <b>Expand</b> pada bagian Runners</p>
+<p>2. Klik <strong>Expand</strong> pada bagian Runners</p>
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ssganti4.png" alt="Gitlab">
 <p>3. Klik titik 3 pada Project runners, lalu salin token yang ada</p>
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ssganti5.png" alt="Gitlab">
@@ -246,7 +246,7 @@ $ git commit -m "commant" && git push origin main
 ```
 
 ### Mendownload Artifacts File JSON
-<p>1. Untuk mendownload hasil dari artifacts bisa di download di bagian <b>Build</b> > <b>Artifacts.</b> Download file yang format JSON.</p>
+<p>1. Untuk mendownload hasil dari artifacts bisa di download di bagian <strong>Build</strong> > <strong>Artifacts.</strong> Download file yang format JSON.</p>
 
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ssganti6.png" alt="Gitlab">
 
@@ -257,24 +257,24 @@ $ git commit -m "commant" && git push origin main
 ### Membuat Alert Discord Untuk Pipeline dan Vulnerability
 *Note: Alert nya disini menggunakan Discord ya*
 
-<p>1. Buka Discord channel tempat yang ingin dipakai untuk menerima notifikasi, lalu pilih <b>Edit Channel.</b></p>
+<p>1. Buka Discord channel tempat yang ingin dipakai untuk menerima notifikasi, lalu pilih <strong>Edit Channel.</strong></p>
 
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ssganti7.png" alt="Discord">
 
-<p>2. Pilih bagian <b>Integrations.</b></p>
+<p>2. Pilih bagian <strong>Integrations.</strong></p>
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ssganti8.png" alt="Discord">
 
-<p>3. Jika belum ada webhook, pilih bagian <b>Create Webhook</b>, lalu pilih <b>View Webhook</b>, setelah itu klik <b>New Webhook</b>. Kalau webhook sudah ada salin URL dari kolom <b>Copy Webhook URL</b>.</p>
+<p>3. Jika belum ada webhook, pilih bagian <strong>Create Webhook</strong>, lalu pilih <strong>View Webhook</strong>, setelah itu klik <strong>New Webhook</strong>. Kalau webhook sudah ada salin URL dari kolom <strong>Copy Webhook URL</strong>.</p>
 
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ssganti9.png" alt="Discord">
 
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ssganti10.png" alt="Discord">
 
-<p>4. Beralih ke Gitlab, di bagian <b>Settings</b> pilih Integrations. Pilih <b>Discord Notifications</b>, lalu pilih Configure.</p>
+<p>4. Beralih ke Gitlab, di bagian <strong>Settings</strong> pilih Integrations. Pilih <strong>Discord Notifications</strong>, lalu pilih Configure.</p>
 
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ss16.png" alt="Discord">
 
-<p>5. Di tahap ini masukkan URL webhook yang telah di salin sebelumnya, lalu pilih kotak yang ingin di centang sesuai dengan yang ingin dikirim notifikasi ke Discord. Setelah itu pilih <b>Save changes</b>.</p>
+<p>5. Di tahap ini masukkan URL webhook yang telah di salin sebelumnya, lalu pilih kotak yang ingin di centang sesuai dengan yang ingin dikirim notifikasi ke Discord. Setelah itu pilih <strong>Save changes</strong>.</p>
 
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ssganti11.png" alt="Discord">
 
