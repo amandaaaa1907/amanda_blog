@@ -376,7 +376,7 @@ https://api.telegram.org/bot(token)/getMe
 ```
 https://api.telegram.org/bot(token)/getUpdates
 ```
-<p>12. Setelah mendapatkan chat id, masukkan ke dalam variables di gitlab CI/CD. Ke Settings > CI/CD > Variables. Isi variables dengan CHAT_ID dan TELEGRAM_TOKEN.</p>
+<p>12. Setelah mendapatkan chat id, masukkan ke dalam variables di gitlab CI/CD. Ke <strong>Settings</strong> > <strong>CI/CD</strong> > <strong>Variables</strong>. Isi variables dengan CHAT_ID dan TELEGRAM_TOKEN.</p>
 
 <img src="https://amandaaaa1907.github.io/amanda_blog//assets/images/ss7.png" alt="Telegram">
 
